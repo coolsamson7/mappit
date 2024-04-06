@@ -41,6 +41,7 @@ class ConversionFactory(parent: ConversionFactory? = null) {
     init {
         if ( parent != null)
             for ( conversion in parent.conversions.values )
+                @Suppress("UNCHECKED_CAST")
                 register(conversion as Conversion<Any,Any>)
     }
 
@@ -97,6 +98,7 @@ class ConversionFactory(parent: ConversionFactory? = null) {
     }
 
     fun <I:Any,O:Any> findConversion(from : KClass<I>, to: KClass<O>) :Conversion<I,O>? {
+        @Suppress("UNCHECKED_CAST")
         return conversions.get(ConversionKey(from,to)) as Conversion<I,O>?
     }
 
@@ -412,6 +414,7 @@ class OperationBuilder(private val matches: MutableCollection<MappingDefinition.
                 else if (sourceType !== targetType && !sourceType.isSubclassOf(targetType) && !deep )
                     conversion = tryConvert(sourceType, targetType, conversionFactory) // try automatic conversion for low-level types
 
+                @Suppress("UNCHECKED_CAST")
                 return conversion as Conversion<Any?,Any?>?
             }
 
@@ -450,6 +453,7 @@ class OperationBuilder(private val matches: MutableCollection<MappingDefinition.
             private fun maybeConvert(property: Transformer.Property<Mapping.Context>, conversion: Conversion<*,*>?): Transformer.Property<Mapping.Context> {
                 return if (conversion == null) property
                 else {
+                    @Suppress("UNCHECKED_CAST")
                     Mapping.Convert(property, conversion as Conversion<Any?,Any?>)
                 }
             }
@@ -532,6 +536,7 @@ class OperationBuilder(private val matches: MutableCollection<MappingDefinition.
             val optimize = true//java.lang.Boolean.getBoolean("optimize-mapper");
 
             if (optimize) {
+                @Suppress("UNCHECKED_CAST")
                 val codeGenerator = Mapping.CodeGenerator(definition as MappingDefinition<Any, Any>)
 
                 codeGenerator
@@ -785,9 +790,11 @@ class MappingDefinition<S : Any, T : Any>(val sourceClass: KClass<S>, val target
              */
             infix fun KProperty1<S,*>.to(target: KProperty1<T,*>):MapBuilder<S,T> {
                 val sourceProperty = PropertyAccessor(this.name)
+                @Suppress("UNCHECKED_CAST")
                 sourceProperty.readProperty = this as KProperty1<Any, Any?>
 
                 val targetProperty = PropertyAccessor(target.name)
+                @Suppress("UNCHECKED_CAST")
                 targetProperty.readProperty = target as KProperty1<Any, Any?>
 
                 sourceAccessor = arrayOf(sourceProperty)
@@ -808,6 +815,7 @@ class MappingDefinition<S : Any, T : Any>(val sourceClass: KClass<S>, val target
              * @return the builder
              */
             infix fun<RS: Any,RT:Any, PK:Any?> synchronize(synchronizer: RelationSynchronizer<RS, RT, PK>) : MapBuilder<S,T> {
+                @Suppress("UNCHECKED_CAST")
                 this.synchronizer = synchronizer as RelationSynchronizer<Any,Any,Any?>
                 this.deep = true
 
@@ -825,6 +833,7 @@ class MappingDefinition<S : Any, T : Any>(val sourceClass: KClass<S>, val target
              * @return the builder
              */
             infix fun<I:Any,O:Any> convert(conversion: Conversion<I,O>) : MapBuilder<S,T> {
+                @Suppress("UNCHECKED_CAST")
                 this.conversion = conversion as Conversion<Any,Any>
 
                 return this
@@ -853,6 +862,7 @@ class MappingDefinition<S : Any, T : Any>(val sourceClass: KClass<S>, val target
              * @return the array
              */
             fun path(vararg path: String): Array<String> {
+                @Suppress("UNCHECKED_CAST")
                 return path as Array<String> // ha !
             }
 
@@ -898,6 +908,7 @@ class MappingDefinition<S : Any, T : Any>(val sourceClass: KClass<S>, val target
              * @return the array
              */
             fun properties(vararg path: String): Array<String> {
+                @Suppress("UNCHECKED_CAST")
                 return path as Array<String> // ha !
             }
 
@@ -1062,9 +1073,11 @@ class MappingDefinition<S : Any, T : Any>(val sourceClass: KClass<S>, val target
 
         override fun resolve(clazz: KClass<*>, write: Boolean) {
             try {
+                @Suppress("UNCHECKED_CAST")
                 this.readProperty = clazz.memberProperties.first { it.name == this.name } as KProperty1<Any, Any?>
 
                 if ( this.readProperty is KMutableProperty1<*, *> )
+                    @Suppress("UNCHECKED_CAST")
                     this.writeProperty = this.readProperty as KMutableProperty1<Any, Any>
             }
             catch (e: MapperDefinitionException) {
@@ -1286,7 +1299,7 @@ class MappingDefinition<S : Any, T : Any>(val sourceClass: KClass<S>, val target
     fun addIntermediateResultDefinition(clazz: KClass<*>, ctr: KFunction<Any>, nargs: Int, valueReceiver: Mapping.ValueReceiver): IntermediateResultDefinition {
         intermediateResultDefinitions.add(IntermediateResultDefinition( clazz, ctr, intermediateResultDefinitions.size, nargs, valueReceiver))
 
-        return intermediateResultDefinitions.last
+        return intermediateResultDefinitions.last()
     }
 
     fun createMapping(mapper: Mapper): Mapping<S, T> {
@@ -1311,6 +1324,7 @@ class MappingDefinition<S : Any, T : Any>(val sourceClass: KClass<S>, val target
                 collect(definition.baseMapping!!)
 
             if ( definition.finalizer != null)
+                @Suppress("UNCHECKED_CAST")
                 finalizer.add(definition.finalizer!! as Finalizer<S,T>)
         }
 
@@ -1542,11 +1556,11 @@ class Mapping<S : Any, T : Any>(
             return resultBuffers[index]!!
         }
 
-        internal inline fun push(value: Any?, index: Int) {
+        internal fun push(value: Any?, index: Int) {
             stack[index] = value
         }
 
-        internal inline fun peek(index: Int): Any? {
+        internal fun peek(index: Int): Any? {
             return stack[index]
         }
 
@@ -1731,7 +1745,7 @@ class Mapping<S : Any, T : Any>(
                 gen.code("))")
 
                 if (getType().java.isPrimitive)
-                    gen.toPrimitive(getType(), {gen -> gen.code("")})
+                    gen.toPrimitive(getType(), {gen1 -> gen1.code("")})
             })
         }
 
@@ -1903,7 +1917,7 @@ class Mapping<S : Any, T : Any>(
             }
 
             if ( clazz.java.isPrimitive && preferPrimitive ) {
-                className = className.toLowerCase()
+                className = className.lowercase(Locale.getDefault())
                 if ( className == "integer")
                     className = "int"
             }
@@ -1921,13 +1935,13 @@ class Mapping<S : Any, T : Any>(
         }
 
         fun getter(property: KMutableProperty<out Any?>) : CodeGenerator {
-            code("get" + property.name.capitalize() + "()")
+            code("get" + property.name.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() } + "()")
 
             return this
         }
 
         fun primitiveSetter(property: MutablePropertyProperty, getter: (code:CodeGenerator) -> Unit) : CodeGenerator {
-            code("set" + property.property.name.capitalize() + "(")
+            code("set" + property.property.name.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() } + "(")
 
             toPrimitive(property.getType(), getter)
 
@@ -1972,7 +1986,7 @@ class Mapping<S : Any, T : Any>(
         }
 
         fun nullableSetter(property: MutablePropertyProperty, getter: (code:CodeGenerator) -> Unit) : CodeGenerator {
-            code("set" + property.property.name.capitalize() + "(")
+            code("set" + property.property.name.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() } + "(")
 
             toNullable(property.getType(), getter)
 
@@ -1981,13 +1995,13 @@ class Mapping<S : Any, T : Any>(
             return this
         }
         fun getter(property: KProperty1<Any, Any?>) : CodeGenerator {
-            code("get" + property.name.capitalize() + "()")
+            code("get" + property.name.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() } + "()")
 
             return this
         }
 
         fun setter(property: MutablePropertyProperty, getter: (code:CodeGenerator) -> Unit) : CodeGenerator {
-            code("set" + property.property.name.capitalize() + "(")
+            code("set" + property.property.name.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() } + "(")
 
             getter(this)
 
@@ -2160,18 +2174,20 @@ class Mapping<S : Any, T : Any>(
         }
     }
 
-    class SynchronizeMultiValuedRelationship<TO:Any, ENTITY:Any, PK:Any?>(val property: KProperty1<Any, Any?>, val synchronizer: RelationSynchronizer<TO, ENTITY, PK>)
+    class SynchronizeMultiValuedRelationship<S:Any, T:Any, PK:Any?>(val property: KProperty1<Any, Any?>, val synchronizer: RelationSynchronizer<S, T, PK>)
         :CompilableProperty<Context> {
         // override
 
-        override fun get(entity: Any, context: Context): Any? {
-            return property.get(entity)
+        override fun get(instance: Any, context: Context): Any? {
+            return property.get(instance)
         }
 
-        override fun set(entity: Any, toList: Any?, context: Context) {
-            val entityList = get(entity, context) as MutableCollection<ENTITY> // ???
+        override fun set(instance: Any, value: Any?, context: Context) {
+            @Suppress("UNCHECKED_CAST")
+            val list = get(instance, context) as MutableCollection<T> // ???
 
-            synchronizer.synchronize(toList as Collection<TO>, entityList, context)
+            @Suppress("UNCHECKED_CAST")
+            synchronizer.synchronize(value as Collection<S>, list, context)
         }
 
         // implement  CompilableProperty
@@ -2182,20 +2198,17 @@ class Mapping<S : Any, T : Any>(
         override fun getCode(generator: CodeGenerator) {
             throw MapperDefinitionException("should not be called")
         }
-        override fun setCode(gen: CodeGenerator, sourceProperty: CompilableProperty<Context>, getter: (code:CodeGenerator) -> Unit) {
-            val index = gen.addSynchronizer(synchronizer)
+        override fun setCode(generator: CodeGenerator, sourceProperty: CompilableProperty<Context>, getter: (code:CodeGenerator) -> Unit) {
+            val index = generator.addSynchronizer(synchronizer)
 
-            gen.code("synchronize($index, ")
+            generator.code("synchronize($index, ")
 
-            getter(gen)
+            getter(generator)
 
-            gen.code(", target.")
-
-            gen.getter(property)
-
-            gen.code(", ctx)")
-
-
+            generator
+                .code(", target.")
+                .getter(property)
+                .code(", ctx)")
         }
 
         // override Any
@@ -2205,7 +2218,7 @@ class Mapping<S : Any, T : Any>(
         }
     }
 
-    class RelationshipAccessor<TO: Any, ENTITY: Any, PK: Any?>(accessor: String, val synchronizer: RelationSynchronizer<TO, ENTITY, PK>) : MappingDefinition.PropertyAccessor(accessor) {
+    class RelationshipAccessor<S: Any, T: Any, PK: Any?>(accessor: String, val synchronizer: RelationSynchronizer<S, T, PK>) : MappingDefinition.PropertyAccessor(accessor) {
         override fun makeTransformerProperty(write: Boolean): Property<Context> {
             return if (!write)
                 throw MapperDefinitionException("error")
@@ -2266,6 +2279,7 @@ class Mapping<S : Any, T : Any>(
                 lateinit var container : Array<Any>
 
                 override fun create(size: Int) : Any {
+                    @Suppress("UNCHECKED_CAST")
                     this.container = java.lang.reflect.Array.newInstance(containerClass.java, size) as Array<Any>
 
                     return container
@@ -2277,6 +2291,7 @@ class Mapping<S : Any, T : Any>(
             }
 
             override fun reader(container: Any) : Container.Reader {
+                @Suppress("UNCHECKED_CAST")
                 return Reader(container as Array<Any>)
             }
 
@@ -2310,6 +2325,7 @@ class Mapping<S : Any, T : Any>(
                 lateinit var collection : MutableCollection<Any>
 
                 override fun create(size: Int) : Any {
+                    @Suppress("UNCHECKED_CAST")
                     this.collection = containerClass.createInstance() as MutableCollection<Any>
 
                     return collection
@@ -2321,6 +2337,7 @@ class Mapping<S : Any, T : Any>(
             }
 
             override fun reader(container: Any) : Container.Reader {
+                @Suppress("UNCHECKED_CAST")
                 return Reader(container as Collection<Any>)
             }
 
@@ -2407,17 +2424,17 @@ class Mapping<S : Any, T : Any>(
             val index = generator.addCollectionContainer(this.source, this.target)
             val result = "collectionResult" + index
 
-            val code = generator
+            generator
                 .javaClass((property as CompilableProperty).getType())
                 .code(" $result = (")
-                .javaClass((property as CompilableProperty).getType())
+                .javaClass(property.getType())
                 .code(")mapCollectionDeep(")
 
             getter(generator)
 
             generator.code(", $index, ctx);\n")
 
-            this.property.setCode(generator, this /* ? */, { generator -> generator.code(result)})
+            this.property.setCode(generator, this /* ? */, { gen -> gen.code(result)})
         }
 
         // override Any
@@ -2455,15 +2472,15 @@ class Mapping<S : Any, T : Any>(
         }
         override fun setCode(generator: CodeGenerator, sourceProperty: CompilableProperty<Context>, getter: (code:CodeGenerator) -> Unit) {
             val type =  (targetProperty as CompilableProperty).getType()
-            targetProperty.setCode(generator, this /* ? */, { generator ->  generator
+            targetProperty.setCode(generator, this /* ? */, { gen ->  gen
                 .code("(")
                 .javaClass(type)
                 .code(")")
                 .code("mapDeep(")
 
-                getter(generator)
+                getter(gen)
 
-                generator.code(", ctx)") })
+                gen.code(", ctx)") })
         }
 
         // override Any
@@ -2502,14 +2519,14 @@ class Mapping<S : Any, T : Any>(
 
                         generator
                             .javaClass(expectedType)
-                            .assign(" t${resultDefinition.index}$index", {generator -> generator.toNullable(expectedType, getter) })
+                            .assign(" t${resultDefinition.index}$index", {gen -> gen.toNullable(expectedType, getter) })
                     }
                     else {
                         // non-primitive to primitive
 
                         generator
                             .javaClass(expectedType)
-                            .assign(" t${resultDefinition.index}$index", {generator -> generator.toPrimitive(expectedType, getter) })
+                            .assign(" t${resultDefinition.index}$index", {gen -> gen.toPrimitive(expectedType, getter) })
                     }
                 }
                 else
@@ -2563,6 +2580,7 @@ class Mapping<S : Any, T : Any>(
         transformTarget(source, target, context)
 
         for ( finalizer in this.finalizer)
+            @Suppress("UNCHECKED_CAST")
             finalizer(source as S, target as T)
     }
 
@@ -2667,6 +2685,7 @@ class Mapper(definitions: List<MappingDefinition<*, *>>, conversions: List<Conve
          * @return the builder
          */
         fun <I:Any, O:Any> convert(conversion: Conversion<I,O>) :Builder {
+            @Suppress("UNCHECKED_CAST")
             conversions.add(conversion as Conversion<Any,Any>)
 
             return this
@@ -2681,6 +2700,7 @@ class Mapper(definitions: List<MappingDefinition<*, *>>, conversions: List<Conve
          * @return the builder
          */
         fun <S:Any,T:Any>mapping(definition: MappingDefinition<S,T>) : Builder {
+            @Suppress("UNCHECKED_CAST")
             definitions.add(definition as MappingDefinition<Any,Any>)
 
             return this
@@ -2703,6 +2723,7 @@ class Mapper(definitions: List<MappingDefinition<*, *>>, conversions: List<Conve
             MappingDefinition.Builder(definition)
                 .apply(lambda)
 
+            @Suppress("UNCHECKED_CAST")
             definitions.add(definition as MappingDefinition<Any,Any>)
 
             return this
@@ -2721,6 +2742,7 @@ class Mapper(definitions: List<MappingDefinition<*, *>>, conversions: List<Conve
         // conversions
 
         for ( conversion in conversions)
+            @Suppress("UNCHECKED_CAST")
             conversionFactory.register(conversion as Conversion<Any,Any>)
 
         // definitions
@@ -2756,6 +2778,7 @@ class Mapper(definitions: List<MappingDefinition<*, *>>, conversions: List<Conve
         if (mapping === null)
             throw MapperException("unknown mapping for class ${type.simpleName}")
 
+        @Suppress("UNCHECKED_CAST")
         return mapping as Mapping<S, Any>
     }
 
@@ -2771,6 +2794,7 @@ class Mapper(definitions: List<MappingDefinition<*, *>>, conversions: List<Conve
                 mappings[clazz] = mapping // cache
         } // else
 
+        @Suppress("UNCHECKED_CAST")
         return mapping as Mapping<S, T>?
     }
 
@@ -2878,6 +2902,7 @@ class Mapper(definitions: List<MappingDefinition<*, *>>, conversions: List<Conve
             if (lazyCreate)
                 target = context // we need to set something....
             else {
+                @Suppress("DEPRECATION")
                 target = mapping.definition.targetClass.java.newInstance() as Any
 
                 context.remember(source, target)
@@ -2898,6 +2923,7 @@ class Mapper(definitions: List<MappingDefinition<*, *>>, conversions: List<Conve
             state.restore(context)
         }
 
+        @Suppress("UNCHECKED_CAST")
         return target as T
     }
 
