@@ -5,7 +5,11 @@ package com.serious.portal.mapper
  * All rights reserved
  */
 
+import org.foundation.common.mapper.Mapper
+import org.foundation.common.mapper.Mapping
+import org.foundation.common.mapper.mapping
 import org.junit.jupiter.api.Test
+import org.serious.portal.mapper.RelationSynchronizer
 import java.util.ArrayList
 import kotlin.test.assertEquals
 

@@ -1,4 +1,4 @@
-package orrg.foundation.common.mapper
+package org.foundation.common.mapper
 
 open class MapperException(message: String, cause: Throwable? = null) : RuntimeException(message, cause)
 

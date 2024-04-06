@@ -5,6 +5,7 @@ package org.serious.portal.mapper
  * All rights reserved
  */
 
+import org.foundation.common.mapper.Mapping
 import java.util.HashMap
 
 typealias PKGetter<T,PK> = (any: T) -> PK

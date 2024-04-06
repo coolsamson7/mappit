@@ -1,4 +1,4 @@
-package orrg.foundation.common.mapper
+package org.foundation.common.mapper
 /*
  * @COPYRIGHT (C) 2023 Andreas Ernst
  *
@@ -8,6 +8,7 @@ package orrg.foundation.common.mapper
 import javassist.ClassPool
 import javassist.CtNewConstructor
 import javassist.CtNewMethod
+import org.serious.portal.mapper.RelationSynchronizer
 import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
@@ -670,7 +671,7 @@ class MappingDefinition<S : Any, T : Any>(val sourceClass: KClass<S>, val target
 
             var deep = false
             var conversion: Conversion<Any,Any>? = null
-            var synchronizer: RelationSynchronizer<Any,Any,Any?>? = null
+            var synchronizer: RelationSynchronizer<Any, Any, Any?>? = null
             var sourceAccessor : Array<Accessor>? = null
             var targetAccessor : Array<Accessor>? = null
             var properties : Properties? = null

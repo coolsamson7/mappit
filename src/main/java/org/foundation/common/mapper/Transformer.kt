@@ -1,4 +1,4 @@
-package orrg.foundation.common.mapper
+package org.foundation.common.mapper
 
 open class Transformer<CONTEXT>(@JvmField val operations: Array<Operation<CONTEXT>>) {
     // local classes & interfaces

@@ -5,6 +5,9 @@ package com.serious.portal.mapper
  * All rights reserved
  */
 
+import org.foundation.common.mapper.Mapper
+import org.foundation.common.mapper.MapperDefinitionException
+import org.foundation.common.mapper.mapping
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 
