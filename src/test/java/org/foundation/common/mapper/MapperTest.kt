@@ -283,7 +283,7 @@ class MapperTest {
     }
 
     @Test
-    fun test1() {
+    fun testFinalizer() {
         val from = From()//"from")
 
         val mapper = Mapper(
@@ -338,7 +338,7 @@ class MapperTest {
 
 
     @Test
-    fun test() {
+    fun testMutableAndImmutableInnerClasses() {
         val mapper = Mapper(
             mapping(Money::class, Money::class) {
                 map { matchingProperties() }

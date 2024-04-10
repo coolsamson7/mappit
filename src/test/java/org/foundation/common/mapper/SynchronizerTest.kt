@@ -9,7 +9,7 @@ import org.foundation.common.mapper.Mapper
 import org.foundation.common.mapper.Mapping
 import org.foundation.common.mapper.mapping
 import org.junit.jupiter.api.Test
-import org.serious.portal.mapper.RelationSynchronizer
+import org.foundation.common.mapper.RelationSynchronizer
 import java.util.ArrayList
 import kotlin.test.assertEquals
 
@@ -43,7 +43,6 @@ class SynchronizerTest {
 
     // test
 
-    // TODO. set 1 on mapping context???
     @Test
     fun test() {
         val root = Root()

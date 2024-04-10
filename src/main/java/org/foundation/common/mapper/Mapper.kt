@@ -8,7 +8,7 @@ package org.foundation.common.mapper
 import javassist.ClassPool
 import javassist.CtNewConstructor
 import javassist.CtNewMethod
-import org.serious.portal.mapper.RelationSynchronizer
+import org.foundation.common.mapper.RelationSynchronizer
 import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
@@ -47,8 +47,6 @@ class ConversionFactory(parent: ConversionFactory? = null) {
 
 
     fun initStandardConversions() : ConversionFactory {
-        // TODO: char, boolean, byte
-
         // short
 
         register {value: Short -> value.toInt() }
@@ -1964,7 +1962,6 @@ class Mapping<S : Any, T : Any>(
             value(this)
 
             code(")")
-
 
             return this
         }

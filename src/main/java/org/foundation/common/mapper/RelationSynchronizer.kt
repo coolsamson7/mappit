@@ -1,11 +1,10 @@
-package org.serious.portal.mapper
+package org.foundation.common.mapper
 /*
  * @COPYRIGHT (C) 2023 Andreas Ernst
  *
  * All rights reserved
  */
 
-import org.foundation.common.mapper.Mapping
 import java.util.HashMap
 
 typealias PKGetter<T,PK> = (any: T) -> PK
@@ -18,7 +17,7 @@ abstract class RelationSynchronizer<S:Any, T:Any, PK> protected constructor(priv
     }
     protected abstract fun provide(source: S, context: Mapping.Context): T
 
-    protected open fun delete(entity: T) {}
+    protected open fun delete(target: T) {}
 
     protected open fun update(target: T, source: S, context: Mapping.Context) {}
 

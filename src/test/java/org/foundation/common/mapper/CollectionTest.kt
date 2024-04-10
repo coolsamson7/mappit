@@ -131,6 +131,8 @@ class CollectionTest {
 
         val result = mapper.map<Foo>(foo)!!
 
+        // starts performance testing
+
         while ( false ) {
             val loops = 100000
             var start = System.currentTimeMillis()
