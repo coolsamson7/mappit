@@ -14,10 +14,10 @@ Assuming classes `ProductEntity`, `ProductTO`, `PartEntity`, `PartTO` and an imm
 ```kotlin
 val mapper = mapper {
     mapping(ProductEntity::class, ProductTO::class) {
-        map { "priceCurrency") to path("price", "currency") }
-        map { "priceValue") to path("price", "value") }
+        map { "priceCurrency" to path("price", "currency") }
+        map { "priceValue" to path("price", "value") }
         map { "parts" to "parts" deep true }
-        map { matchingProperties() except properties("price") }
+        map { matchingProperties() except properties("parts") }
      }
 
     mapping(PartEntity::class, PartTO::class) {
