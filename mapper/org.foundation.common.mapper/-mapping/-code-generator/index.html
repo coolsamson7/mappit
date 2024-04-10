@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>CodeGenerator</title>
+    <link href="../../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
+<script type="text/javascript" src="../../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../../styles/style.css" rel="Stylesheet">
+<link href="../../../../styles/main.css" rel="Stylesheet">
+<link href="../../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+                    <a class="library-name--link" href="../../../../index.html">
+                            mapper
+                    </a>
+            </div>
+            <div class="library-version">
+            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter="mapper/JVM">JVM</button>
+        </div>
+    </div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
+    </div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="mapper::org.foundation.common.mapper/Mapping.CodeGenerator///PointingToDeclaration//1677530811">
+  <div class="breadcrumbs"><a href="../../../../index.html">mapper</a><span class="delimiter">/</span><a href="../../index.html">org.foundation.common.mapper</a><span class="delimiter">/</span><a href="../index.html">Mapping</a><span class="delimiter">/</span><span class="current">CodeGenerator</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Code</span><wbr></wbr><span><span>Generator</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="mapper/JVM"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">CodeGenerator</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>definition<span class="token operator">: </span><a href="../../-mapping-definition/index.html">MappingDefinition</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="">Constructors</h2>
+        <div class="table"><a data-name="-1140660928%2FConstructors%2F1677530811" anchor-label="CodeGenerator" id="-1140660928%2FConstructors%2F1677530811" data-filterable-set="mapper/JVM"></a>
+          <div class="table-row" data-togglable="CONSTRUCTOR" data-filterable-current="mapper/JVM" data-filterable-set="mapper/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-code-generator.html"><span>Code</span><wbr></wbr><span><span>Generator</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1140660928%2FConstructors%2F1677530811"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="mapper/JVM"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">definition<span class="token operator">: </span><a href="../../-mapping-definition/index.html">MappingDefinition</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="TYPE">
+        <h2 class="">Types</h2>
+        <div class="table"><a data-name="1424025289%2FClasslikes%2F1677530811" anchor-label="Companion" id="1424025289%2FClasslikes%2F1677530811" data-filterable-set="mapper/JVM"></a>
+          <div class="table-row" data-filterable-current="mapper/JVM" data-filterable-set="mapper/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-companion/index.html"><span><span>Companion</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1424025289%2FClasslikes%2F1677530811"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="mapper/JVM"><div class="symbol monospace"><span class="token keyword">object </span><a href="-companion/index.html">Companion</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="1488717703%2FProperties%2F1677530811" anchor-label="builder" id="1488717703%2FProperties%2F1677530811" data-filterable-set="mapper/JVM"></a>
+          <div class="table-row" data-filterable-current="mapper/JVM" data-filterable-set="mapper/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="builder.html"><span><span>builder</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1488717703%2FProperties%2F1677530811"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="mapper/JVM"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="builder.html">builder</a><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html">StringBuilder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2061020345%2FProperties%2F1677530811" anchor-label="collectionMapper" id="2061020345%2FProperties%2F1677530811" data-filterable-set="mapper/JVM"></a>
+          <div class="table-row" data-filterable-current="mapper/JVM" data-filterable-set="mapper/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="collection-mapper.html"><span>collection</span><wbr></wbr><span><span>Mapper</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2061020345%2FProperties%2F1677530811"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="mapper/JVM"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="collection-mapper.html">collectionMapper</a><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../-map-collection2-collection/-container/index.html">Mapping.MapCollection2Collection.Container</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1454605509%2FProperties%2F1677530811" anchor-label="conversions" id="1454605509%2FProperties%2F1677530811" data-filterable-set="mapper/JVM"></a>
+          <div class="table-row" data-filterable-current="mapper/JVM" data-filterable-set="mapper/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="conversions.html"><span><span>conversions</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1454605509%2FProperties%2F1677530811"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="mapper/JVM"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="conversions.html">conversions</a><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../-conversion/index.html">Conversion</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-115619675%2FProperties%2F1677530811" anchor-label="definition" id="-115619675%2FProperties%2F1677530811" data-filterable-set="mapper/JVM"></a>
+          <div class="table-row" data-filterable-current="mapper/JVM" data-filterable-set="mapper/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="definition.html"><span><span>definition</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-115619675%2FProperties%2F1677530811"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="mapper/JVM"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="definition.html">definition</a><span class="token operator">: </span><a href="../../-mapping-definition/index.html">MappingDefinition</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1872381174%2FProperties%2F1677530811" anchor-label="synchronizer" id="1872381174%2FProperties%2F1677530811" data-filterable-set="mapper/JVM"></a>
+          <div class="table-row" data-filterable-current="mapper/JVM" data-filterable-set="mapper/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="synchronizer.html"><span><span>synchronizer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1872381174%2FProperties%2F1677530811"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="mapper/JVM"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="synchronizer.html">synchronizer</a><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../-relation-synchronizer/index.html">RelationSynchronizer</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token punctuation">, </span><span class="token operator">*</span><span class="token punctuation">, </span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="541060001%2FFunctions%2F1677530811" anchor-label="addCollectionContainer" id="541060001%2FFunctions%2F1677530811" data-filterable-set="mapper/JVM"></a>
+          <div class="table-row" data-filterable-current="mapper/JVM" data-filterable-set="mapper/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="add-collection-container.html"><span>add</span><wbr></wbr><span>Collection</span><wbr></wbr><span><span>Container</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="541060001%2FFunctions%2F1677530811"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="mapper/JVM"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="add-collection-container.html"><span class="token function">addCollectionContainer</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">source<span class="token operator">: </span><a href="../-map-collection2-collection/-container/index.html">Mapping.MapCollection2Collection.Container</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">target<span class="token operator">: </span><a href="../-map-collection2-collection/-container/index.html">Mapping.MapCollection2Collection.Container</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1727655103%2FFunctions%2F1677530811" anchor-label="addConversion" id="1727655103%2FFunctions%2F1677530811" data-filterable-set="mapper/JVM"></a>
+          <div class="table-row" data-filterable-current="mapper/JVM" data-filterable-set="mapper/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="add-conversion.html"><span>add</span><wbr></wbr><span><span>Conversion</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1727655103%2FFunctions%2F1677530811"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="mapper/JVM"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="add-conversion.html"><span class="token function">addConversion</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">conversion<span class="token operator">: </span><a href="../../-conversion/index.html">Conversion</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1707908902%2FFunctions%2F1677530811" anchor-label="addSynchronizer" id="1707908902%2FFunctions%2F1677530811" data-filterable-set="mapper/JVM"></a>
+          <div class="table-row" data-filterable-current="mapper/JVM" data-filterable-set="mapper/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="add-synchronizer.html"><span>add</span><wbr></wbr><span><span>Synchronizer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1707908902%2FFunctions%2F1677530811"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="mapper/JVM"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="add-synchronizer.html"><span class="token function">addSynchronizer</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">synchronizer<span class="token operator">: </span><a href="../../-relation-synchronizer/index.html">RelationSynchronizer</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token punctuation">, </span><span class="token operator">*</span><span class="token punctuation">, </span><span class="token operator">*</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="86031718%2FFunctions%2F1677530811" anchor-label="assign" id="86031718%2FFunctions%2F1677530811" data-filterable-set="mapper/JVM"></a>
+          <div class="table-row" data-filterable-current="mapper/JVM" data-filterable-set="mapper/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="assign.html"><span><span>assign</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="86031718%2FFunctions%2F1677530811"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="mapper/JVM"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="assign.html"><span class="token function">assign</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">variable<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">value<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span>code<span class="token operator">: </span><a href="index.html">Mapping.CodeGenerator</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">Mapping.CodeGenerator</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1086427782%2FFunctions%2F1677530811" anchor-label="code" id="-1086427782%2FFunctions%2F1677530811" data-filterable-set="mapper/JVM"></a>
+          <div class="table-row" data-filterable-current="mapper/JVM" data-filterable-set="mapper/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="code.html"><span><span>code</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1086427782%2FFunctions%2F1677530811"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="mapper/JVM"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="code.html"><span class="token function">code</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="code.html"><span class="token function">code</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">code<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">Mapping.CodeGenerator</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="41884725%2FFunctions%2F1677530811" anchor-label="constant" id="41884725%2FFunctions%2F1677530811" data-filterable-set="mapper/JVM"></a>
+          <div class="table-row" data-filterable-current="mapper/JVM" data-filterable-set="mapper/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="constant.html"><span><span>constant</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="41884725%2FFunctions%2F1677530811"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="mapper/JVM"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="constant.html"><span class="token function">constant</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="555179847%2FFunctions%2F1677530811" anchor-label="createProperty" id="555179847%2FFunctions%2F1677530811" data-filterable-set="mapper/JVM"></a>
+          <div class="table-row" data-filterable-current="mapper/JVM" data-filterable-set="mapper/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="create-property.html"><span>create</span><wbr></wbr><span><span>Property</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="555179847%2FFunctions%2F1677530811"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="mapper/JVM"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="create-property.html"><span class="token function">createProperty</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-compiled-property-property/index.html">Mapping.CompiledPropertyProperty</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="812305370%2FFunctions%2F1677530811" anchor-label="getResultDefinition" id="812305370%2FFunctions%2F1677530811" data-filterable-set="mapper/JVM"></a>
+          <div class="table-row" data-filterable-current="mapper/JVM" data-filterable-set="mapper/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-result-definition.html"><span>get</span><wbr></wbr><span>Result</span><wbr></wbr><span><span>Definition</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="812305370%2FFunctions%2F1677530811"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="mapper/JVM"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-result-definition.html"><span class="token function">getResultDefinition</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">index<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../-mapping-definition/-intermediate-result-definition/index.html">MappingDefinition.IntermediateResultDefinition</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1766060064%2FFunctions%2F1677530811" anchor-label="getter" id="-1766060064%2FFunctions%2F1677530811" data-filterable-set="mapper/JVM"></a>
+          <div class="table-row" data-filterable-current="mapper/JVM" data-filterable-set="mapper/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="getter.html"><span><span>getter</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1766060064%2FFunctions%2F1677530811"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="mapper/JVM"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="getter.html"><span class="token function">getter</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">property<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-mutable-property/index.html">KMutableProperty</a><span class="token operator">&lt;</span><span class="token keyword">out </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">Mapping.CodeGenerator</a></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="getter.html"><span class="token function">getter</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">property<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-property1/index.html">KProperty1</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">Mapping.CodeGenerator</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1868597925%2FFunctions%2F1677530811" anchor-label="javaClass" id="-1868597925%2FFunctions%2F1677530811" data-filterable-set="mapper/JVM"></a>
+          <div class="table-row" data-filterable-current="mapper/JVM" data-filterable-set="mapper/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="java-class.html"><span>java</span><wbr></wbr><span><span>Class</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1868597925%2FFunctions%2F1677530811"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="mapper/JVM"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="java-class.html"><span class="token function">javaClass</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">clazz<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html">KClass</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">preferPrimitive<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">true</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">Mapping.CodeGenerator</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="404085374%2FFunctions%2F1677530811" anchor-label="nullableSetter" id="404085374%2FFunctions%2F1677530811" data-filterable-set="mapper/JVM"></a>
+          <div class="table-row" data-filterable-current="mapper/JVM" data-filterable-set="mapper/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="nullable-setter.html"><span>nullable</span><wbr></wbr><span><span>Setter</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="404085374%2FFunctions%2F1677530811"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="mapper/JVM"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="nullable-setter.html"><span class="token function">nullableSetter</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">property<span class="token operator">: </span><a href="../-mutable-property-property/index.html">Mapping.MutablePropertyProperty</a><span class="token punctuation">, </span></span><span class="parameter ">getter<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span>code<span class="token operator">: </span><a href="index.html">Mapping.CodeGenerator</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">Mapping.CodeGenerator</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1335184742%2FFunctions%2F1677530811" anchor-label="primitiveSetter" id="-1335184742%2FFunctions%2F1677530811" data-filterable-set="mapper/JVM"></a>
+          <div class="table-row" data-filterable-current="mapper/JVM" data-filterable-set="mapper/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="primitive-setter.html"><span>primitive</span><wbr></wbr><span><span>Setter</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1335184742%2FFunctions%2F1677530811"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="mapper/JVM"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="primitive-setter.html"><span class="token function">primitiveSetter</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">property<span class="token operator">: </span><a href="../-mutable-property-property/index.html">Mapping.MutablePropertyProperty</a><span class="token punctuation">, </span></span><span class="parameter ">getter<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span>code<span class="token operator">: </span><a href="index.html">Mapping.CodeGenerator</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">Mapping.CodeGenerator</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1981220483%2FFunctions%2F1677530811" anchor-label="setter" id="-1981220483%2FFunctions%2F1677530811" data-filterable-set="mapper/JVM"></a>
+          <div class="table-row" data-filterable-current="mapper/JVM" data-filterable-set="mapper/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="setter.html"><span><span>setter</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1981220483%2FFunctions%2F1677530811"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="mapper/JVM"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="setter.html"><span class="token function">setter</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">property<span class="token operator">: </span><a href="../-mutable-property-property/index.html">Mapping.MutablePropertyProperty</a><span class="token punctuation">, </span></span><span class="parameter ">getter<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span>code<span class="token operator">: </span><a href="index.html">Mapping.CodeGenerator</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">Mapping.CodeGenerator</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2027602328%2FFunctions%2F1677530811" anchor-label="toNullable" id="-2027602328%2FFunctions%2F1677530811" data-filterable-set="mapper/JVM"></a>
+          <div class="table-row" data-filterable-current="mapper/JVM" data-filterable-set="mapper/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="to-nullable.html"><span>to</span><wbr></wbr><span><span>Nullable</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2027602328%2FFunctions%2F1677530811"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="mapper/JVM"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="to-nullable.html"><span class="token function">toNullable</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">clazz<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html">KClass</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">value<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span>code<span class="token operator">: </span><a href="index.html">Mapping.CodeGenerator</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">Mapping.CodeGenerator</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-403526226%2FFunctions%2F1677530811" anchor-label="toPrimitive" id="-403526226%2FFunctions%2F1677530811" data-filterable-set="mapper/JVM"></a>
+          <div class="table-row" data-filterable-current="mapper/JVM" data-filterable-set="mapper/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="to-primitive.html"><span>to</span><wbr></wbr><span><span>Primitive</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-403526226%2FFunctions%2F1677530811"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="mapper/JVM"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="to-primitive.html"><span class="token function">toPrimitive</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">clazz<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html">KClass</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">value<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span>code<span class="token operator">: </span><a href="index.html">Mapping.CodeGenerator</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">Mapping.CodeGenerator</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2024 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
