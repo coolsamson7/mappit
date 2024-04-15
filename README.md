@@ -53,6 +53,19 @@ As this topic is often discussed, Mappit is pretty FAST!
 
 All operations are translated - with the help of javassist - to plain Java-Code which enables performance near manual code...
 
+A simple benchmark copying an object with 10 properties was executed with
+* Mappit
+* [Shapeshift](https://github.com/krud-dev/shapeshift)
+* [Model Mapper](http://modelmapper.org)
+
+100000 loops took
+|Library|Time|Avg|
+|---|---|---|
+| Mappit | d | f |
+| Mappit | d | f |
+| Mappit | d | f |
+
+
 Let's take a look at the details
 
 Check out the corresponding [Wiki](https://github.com/coolsamson7/mappit/wiki) for more details.
