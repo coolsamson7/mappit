@@ -61,11 +61,8 @@ A simple benchmark copying an object with 10 properties was executed with
 100000 loops took
 |Library|Time|Avg|
 |---|---|---|
-| Mappit | d | f |
-| Mappit | d | f |
-| Mappit | d | f |
-
-
-Let's take a look at the details
+| ModelMapper | 522ms | 0.00522 |
+| ShapeShift | 56ms | 5.6E-4 |
+| Mappit |  10ms | 1.0E-4 |
 
 Check out the corresponding [Wiki](https://github.com/coolsamson7/mappit/wiki) for more details.
