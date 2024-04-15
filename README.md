@@ -1,11 +1,11 @@
 [![Java CI with Maven](https://github.com/coolsamson7/mappit/actions/workflows/maven.yml/badge.svg)](https://github.com/coolsamson7/mappit/actions/workflows/maven.yml)
-# mappit
+# Mappit
 
 `Mappit` is a pure Kotlin object mapper framework used to avoid boilerplate and error prone manual mapping code vastly simplifying the implementation of typical use-cases ( DTO/Entity conversions, etc. )
 
 The basic idea is to rely on a declarative approach to specify the mapping logic. In contrast to various other - mostly java based - implementations, it is completely non-invasive and does not require any changes to the affected classes ( e.g. by adding annotations ).
 
-The other unique detail - at least i havn't found it at a glance - is, that it supports immutable classes, which write properties via val constructor arguments only.
+The other unique detail, that it supports complex data structures on the target side of any level, including classes, that set `val` properties as constructor arguments only.
 
 Let's look at a simple example:
 
@@ -55,4 +55,4 @@ All operations are translated - with the help of javassist - to plain Java-Code 
 
 Let's take a look at the details
 
-Check the corresponding Wiki https://github.com/coolsamson7/mappit/wiki
+Check out the corresponding [Wiki](https://github.com/coolsamson7/mappit/wiki) for more details.
